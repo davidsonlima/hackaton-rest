@@ -1,9 +1,7 @@
 package br.com.xumappdev.brasleverp.brasleverp.domain.entity;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Table(name = "t_alimento")
@@ -27,7 +25,15 @@ public class Alimento {
     @Column(name = "nu_qtd_alimento")
     private Double quantidadeAlimento;
 
-    //TODO: criar pk para id_lista, id_rest, id_ong
+    //TODO: criar fk para id_lista, id_rest, id_ong
+    @OneToOne
+    private ListaAlimentos listaAlimentos;
+
+    @OneToOne
+    private Restaurante restaurante;
+
+    @OneToOne
+    private Ong ong;
 
     public Long getId() {
         return id;
@@ -75,5 +81,29 @@ public class Alimento {
 
     public void setQuantidadeAlimento(Double quantidadeAlimento) {
         this.quantidadeAlimento = quantidadeAlimento;
+    }
+
+    public ListaAlimentos getListaAlimentos() {
+        return listaAlimentos;
+    }
+
+    public void setListaAlimentos(ListaAlimentos listaAlimentos) {
+        this.listaAlimentos = listaAlimentos;
+    }
+
+    public Restaurante getRestaurante() {
+        return restaurante;
+    }
+
+    public void setRestaurante(Restaurante restaurante) {
+        this.restaurante = restaurante;
+    }
+
+    public Ong getOng() {
+        return ong;
+    }
+
+    public void setOng(Ong ong) {
+        this.ong = ong;
     }
 }

@@ -1,7 +1,6 @@
 package br.com.xumappdev.brasleverp.brasleverp.domain.entity;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
 import java.util.List;
 
 @Entity
@@ -26,7 +25,11 @@ public class Endereco {
     @Column(name = "tx_estado")
     private String nomeEstado;
 
-    //TODO: criar pk para id_rest, id_ong
+    @ManyToOne(optional = true)
+    private Ong ong;
+
+    @ManyToOne(optional = true)
+    private Restaurante restaurante;
 
     public Long getId() {
         return id;
@@ -74,5 +77,21 @@ public class Endereco {
 
     public void setNomeEstado(String nomeEstado) {
         this.nomeEstado = nomeRua;
+    }
+
+    public Restaurante getRestaurante() {
+        return restaurante;
+    }
+
+    public void setRestaurante(Restaurante restaurante) {
+        this.restaurante = restaurante;
+    }
+
+    public Ong getOng() {
+        return ong;
+    }
+
+    public void setOng(Ong ong) {
+        this.ong = ong;
     }
 }

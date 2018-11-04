@@ -15,7 +15,7 @@ public class ListaAlimentos {
     @Column(name = "tx_nome_alimento")
     private String nomeAlimento;
 
-    //TODO: criar pk para id_lista, id_rest, id_ong
+    //TODO: criar fk para id_lista, id_rest, id_ong
 
     public Long getId() {
         return id;

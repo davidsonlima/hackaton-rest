@@ -1,8 +1,6 @@
 package br.com.xumappdev.brasleverp.brasleverp.domain.entity;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import java.util.List;
 
 @Entity
 @Table(name = "t_ong")
@@ -26,6 +24,14 @@ public class Ong {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getNomeOng() {
+        return nomeOng;
+    }
+
+    public void setNomeOng(String nomeOng) {
+        this.nomeOng = nomeOng;
     }
 
     public String getNomeResponsavel() {

@@ -6,9 +6,11 @@ import java.util.List;
 
 @Entity
 @Table(name = "t_documentacao_ong")
-public class DocumentacaoOng {
+public class OngDocs {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false, nullable = false)
     private Long id;
 
     @Column(name = "tx_registro_cartorio")

@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
-@EnableJpaRepositories
+@EnableJpaRepositories(value = "br.com.xumappdev.brasleverp.brasleverp.repository")
 public class JPAConfig {
 
 }

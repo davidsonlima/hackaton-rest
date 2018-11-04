@@ -1,4 +1,4 @@
-package br.com.xumappdev.brasleverp.brasleverp.dto.rest;
+package br.com.xumappdev.brasleverp.brasleverp.domain.dto.rest;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

@@ -1,5 +1,6 @@
-package br.com.xumappdev.brasleverp.brasleverp.dto.rest;
+package br.com.xumappdev.brasleverp.brasleverp.domain.dto.rest;
 
+import br.com.xumappdev.brasleverp.brasleverp.domain.enumeration.UserType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
@@ -8,28 +9,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class LoginResponseDTO {
 
-    @JsonProperty(value = "username")
-    private String username;
-
     @JsonProperty(value = "email")
     private String email;
-
-    @JsonProperty(value = "password")
-    private String password;
 
     @JsonProperty(value = "name")
     private String name;
 
     @JsonProperty(value = "token")
-    private String token;
-    
-    public String getUsername() {
-        return username;
-    }
+    private String cnpj;
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+    @JsonProperty(value = "userType")
+    private UserType userType;
 
     public String getEmail() {
         return email;
@@ -39,19 +29,27 @@ public class LoginResponseDTO {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
+
+    public UserType getUserType() {
+        return userType;
+    }
+
+    public void setUserType(UserType userType) {
+        this.userType = userType;
     }
 }

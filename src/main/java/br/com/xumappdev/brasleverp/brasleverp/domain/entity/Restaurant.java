@@ -1,24 +1,27 @@
 package br.com.xumappdev.brasleverp.brasleverp.domain.entity;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import java.util.List;
 
 @Entity
 @Table(name = "t_restaurante")
-public class Restaurante {
+public class Restaurant {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false, nullable = false)
     private Long id;
 
     @Column(name = "tx_nome_restaurante")
-    private String nomeRestaurante;
+    private String name;
 
     @Column(name = "tx_cnpj")
     private Long cnpj;
 
     @Column(name = "tx_email")
     private String email;
+
+    @Column(name = "tx_password")
+    private String password;
 
     public Long getId() {
         return id;
@@ -28,12 +31,12 @@ public class Restaurante {
         this.id = id;
     }
 
-    public String getNomeRestaurante() {
-        return nomeRestaurante;
+    public String getName() {
+        return name;
     }
 
-    public void setNomeRestaurante(String nomeRestaurante) {
-        this.nomeRestaurante = nomeRestaurante;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -52,5 +55,11 @@ public class Restaurante {
         this.cnpj = cnpj;
     }
 
+    public String getPassword() {
+        return password;
+    }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

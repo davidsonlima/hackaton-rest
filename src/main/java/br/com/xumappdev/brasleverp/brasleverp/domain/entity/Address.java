@@ -1,13 +1,14 @@
 package br.com.xumappdev.brasleverp.brasleverp.domain.entity;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "t_endereco")
-public class Endereco {
+public class Address {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false, nullable = false)
     private Long id;
 
     @Column(name = "tx_rua")
@@ -29,7 +30,7 @@ public class Endereco {
     private Ong ong;
 
     @ManyToOne(optional = true)
-    private Restaurante restaurante;
+    private Restaurant restaurant;
 
     public Long getId() {
         return id;
@@ -79,12 +80,12 @@ public class Endereco {
         this.nomeEstado = nomeRua;
     }
 
-    public Restaurante getRestaurante() {
-        return restaurante;
+    public Restaurant getRestaurant() {
+        return restaurant;
     }
 
-    public void setRestaurante(Restaurante restaurante) {
-        this.restaurante = restaurante;
+    public void setRestaurant(Restaurant restaurant) {
+        this.restaurant = restaurant;
     }
 
     public Ong getOng() {
